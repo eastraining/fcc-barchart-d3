@@ -41,7 +41,7 @@ fetch('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/maste
     .attr('data-date', d => d[2])
     .attr('data-gdp', d => d[1])
     .on('mouseover', function (d, i) {
-        let gdpFigure = this.getAttribute('data-gdp').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        let gdpFigure = this.getAttribute('data-gdp').toLocaleString();
         d3.select(this)
         .style('opacity', 0.7);
         tooltip.style('opacity', 1)
